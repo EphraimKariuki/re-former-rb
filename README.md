@@ -1,7 +1,6 @@
-# README
+# Forms in Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a practice project on Forms. An attempt at undertading how form in rails interact with model and the view aspect of an aplication.
 
 Things you may want to cover:
 
