@@ -1,8 +1,9 @@
+<%# 
 <form action="/users" method="POST" accept-charset="UTF-8" data-turbo=false>
     <input
     type="hidden"
     name="authenticity_token"
-    value="<%= form_authenticity_token %>"
+    
     >
 
     <div>
@@ -18,4 +19,22 @@
         <input type="password" name="user[password]" />
     </div>
     <button type="submit">Create</button>
-</form>
+</form> %>
+
+
+
+<%= form_with model: @user do |form| %>
+  <div>
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div>
+  <div>
+    <%= form.label :email, "Your Email :" %>
+    <%= form.email_field :email, placeholder: "your@email.com" %>
+  </div>
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+  <%= form.submit "Create" %>
+<% end %> 
