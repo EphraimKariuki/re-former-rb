@@ -27,14 +27,38 @@
   <div>
     <%= form.label :username %>
     <%= form.text_field :username %>
+    
   </div>
+  <div>
+    <% if @user.errors.any? %>
+            <% @user.errors.where(:username).each do |message| %>
+                <p>* <%= message.full_message %></p>
+            <% end %>
+    <% end %> 
+  </div>
+  
+  
   <div>
     <%= form.label :email, "Your Email :" %>
     <%= form.email_field :email, placeholder: "your@email.com" %>
   </div>
   <div>
+      <% if @user.errors.any? %>
+              <% @user.errors.where(:email).each do |message| %>
+                  <p>* <%= message.full_message %></p>
+              <% end %>
+      <% end %> 
+    </div>
+  <div>
     <%= form.label :password %>
     <%= form.password_field :password %>
   </div>
+  <div>
+      <% if @user.errors.any? %>
+              <% @user.errors.where(:password).each do |message| %>
+                  <p>* <%= message.full_message %></p>
+              <% end %>
+      <% end %> 
+    </div>
   <%= form.submit "Create" %>
 <% end %> 
